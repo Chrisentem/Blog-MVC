@@ -11,6 +11,34 @@
   <title><?= $title ?></title>
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="">Jean Forteroche - Blog</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin/"><p>Se connecter</p></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('Content/img/home-bg.jpg')">
       <div class="overlay"></div>
@@ -18,8 +46,8 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
-              <a href=""><h1 id="blogTitle">Jean Forteroche</h1></a>
-              <span class="subheading">Billet simple pour l'Alaska</span>
+              <a href=""><h1 id="blogTitle">Billet simple pour l'Alaska</h1></a>
+              <span class="subheading">Découvrez mon dernier ouvrage</span>
             </div>
           </div>
         </div>
@@ -39,9 +67,8 @@
   <footer id="blogFooter">
     <div class="container">
       <p class="copyright text-muted">Copyright &copy; 2018 - Blog réalisé avec PHP, HTML5 et Bootstrap 4.</p>
-          <a href="admin/"><p>Se connecter</p></a>
-        </div>
-    </footer>
+    </div>
+  </footer>
 
         <!-- Bootstrap core JavaScript -->
     <script src="Content/jquery/jquery.min.js"></script>
