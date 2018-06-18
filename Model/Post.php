@@ -37,6 +37,18 @@ class Post extends Model {
 		throw new Exception("No Post matches with the id '$postId'");
 	}
 
+    /** Update a Post
+    *
+    * @param int $id Post id
+    * @param string $content Post content
+    * @param string $title Post title
+    **/    
+    public function update($title, $content, $postId){
+        $sql = 'UPDATE T_POST SET POST_TITLE = ?, POST_CONTENT = ?, POST_DATE = ? WHERE POST_ID = ?';
+        $date = date(DATE_W3C);
+        $this->executeRequest($sql, [$title, $content, $date, $postId]);
+    }
+
     /** Delete a Post and associated Comments
     *
     * @param int $id Post id

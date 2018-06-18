@@ -34,9 +34,27 @@ class ControllerAdmin extends ControllerSecured
         $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts));
     }
 
+    // Action to edit a Post
+    // Change title and content only allowed
+    public function editPost() {
+        $postId = $this->request->getParameter("id");
+        $post = $this->post->getPost($postId);
+        $this->generateView(array('post' => $post));
+    }
+
+    // Action to save a Post modifications  
+    public function savePost() {
+        $postId = $this->request->getParameter("id");
+        $title = $this->request->getParameter("title");
+        $content = $this->request->getParameter("content");
+        
+        $this->post->update($title, $content, $postId);
+        $this->redirect('admin','editPost/'.$postId);
+
+    }
+
     // Action to delete a Post
-        public function deletePost()
-    {
+    public function deletePost() {
         $postId = $this->request->getParameter("id");
         $this->post->delete($postId);
         $this->redirect('Admin','index/');
