@@ -1,2 +1,2 @@
 # Blog-MVC
-Blog PHP MVC from Pesquet translated in english
+Blog PHP MVC based on Pesquet project https://github.com/bpesquet/MonBlog/tree/authentification translated in english
