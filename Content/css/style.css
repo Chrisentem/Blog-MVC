@@ -1,0 +1,63 @@
+/*** Stylesheet Mon Blog 2018 ***/
+
+html, body {
+    height: 100%;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url("../fonts/open-sans/OpenSans-Light.ttf");
+}
+
+body {
+    color: #bfbfbf;
+    background: #333;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+.postTitle {
+    margin-bottom : 0px;
+}
+
+.commentAuthor {
+	color: #d66666;
+}
+
+#content {
+    margin-bottom : 30px;
+}
+
+#blogTitle {
+    text-align: center;
+}
+
+#answerTitles {
+    font-size: 1em;
+}
+
+
+#decoLink {
+    color: #bfbfbf;
+}
+
+
+/** Administration **/
+
+.adminList h2 {
+  color: #fff;
+  font-size: 1.2em;
+}
+
+
+.adminList time {
+  color: #555;
+  font-size: 0.8em;
+}
