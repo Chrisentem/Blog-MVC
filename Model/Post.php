@@ -37,6 +37,15 @@ class Post extends Model {
 		throw new Exception("No Post matches with the id '$postId'");
 	}
 
+    /** Delete a Post and associated Comments
+    *
+    * @param int $id Post id
+    **/
+    public function delete($postId){
+        $sql = 'DELETE FROM T_POST WHERE POST_ID = ?; DELETE FROM T_COMMENT WHERE POST_ID = ?';
+        $this->executeRequest($sql, [$postId, $postId]);
+    }
+
 	/**
      * Returns total number of Posts
      * 

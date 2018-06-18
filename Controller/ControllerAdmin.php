@@ -34,5 +34,13 @@ class ControllerAdmin extends ControllerSecured
         $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts));
     }
 
+    // Action to delete a Post
+        public function deletePost()
+    {
+        $postId = $this->request->getParameter("id");
+        $this->post->delete($postId);
+        $this->redirect('Admin','index/');
+    }
+
 }
 
