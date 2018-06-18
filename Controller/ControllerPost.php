@@ -24,7 +24,7 @@ class ControllerPost extends Controller {
         $this->comment = new Comment();
     }
 
-    // Display a Post details
+    // Action to display a single Post details
     public function index() {
         $postId = $this->request->getParameter("id");
         
@@ -32,6 +32,26 @@ class ControllerPost extends Controller {
         $comments = $this->comment->getComments($postId);
         
         $this->generateView(array('post' => $post, 'comments' => $comments));
+    }
+
+    // Action to add a comment to a Post
+    public function commenting() {
+        if(strlen($this->request->getParameter("content")) > 10)
+        {
+        $postId = $this->request->getParameter("id");
+        $author = $this->request->getParameter("author");
+        $content = $this->request->getParameter("content");
+        
+        $this->comment->addComment($author, $content, $postId);
+        $this->redirect('Post','index/'.$postId);
+        }
+        else {
+        echo "Commentaire trop court";
+        }
+        
+        // Execute the default action to reload and display the Posts list
+        $this->executeAction("index");
+
     }
 
 }
