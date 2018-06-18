@@ -16,8 +16,8 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
 		        <time>Crée le : <?= $this->clean($post['date']) ?></time>
 		    </div>
 		    <div class="col-md-6">
-                <a href="<?= "admin/editPost/" . $this->clean($post['id']) ?>">Editer</a>
-                <a href="<?= "admin/deletePost/" . $this->clean($post['id']) ?>">Supprimer</a>
+                <a class="btn btn-primary" href="<?= "admin/editPost/" . $this->clean($post['id']) ?>">Editer</a>
+                <a class="btn btn-danger" href="<?= "admin/deletePost/" . $this->clean($post['id']) ?>">Supprimer</a>
         	</div>
     </li>
     <hr />
