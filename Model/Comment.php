@@ -15,7 +15,7 @@ class Comment extends Model {
      */
 	public function getComments($postId)
 	{
-		$sql = 'SELECT COM_ID as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID FROM T_COMMENT WHERE POST_ID=?';
+		$sql = 'SELECT COM_ID as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID FROM T_COMMENT WHERE POST_ID=? ORDER BY id DESC LIMIT 5';
 		$comments = $this->executeRequest($sql, array($postId));
 		return $comments;
 	}
