@@ -16,7 +16,7 @@
 					</div>
 					<div class="form-group">
 						<label for="content">Votre texte</label>
-						<textarea rows="3" id="content" name="content"/><?= $this->clean($post['content']) ?></textarea>
+						<textarea rows="3" class="form-control" id="content" name="content"/><?= $this->clean($post['content']) ?></textarea>
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary" >Sauvegarder</button>
@@ -24,4 +24,5 @@
 				</form>
         	</div>
         </div>
-		
+
+<a id="decoLink" href="connection/disconnect">Se déconnecter</a>		

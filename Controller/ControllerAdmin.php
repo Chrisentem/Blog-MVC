@@ -60,5 +60,14 @@ class ControllerAdmin extends ControllerSecured
         $this->redirect('Admin','index/');
     }
 
+    // Action to write a new Post
+    public function writing() {
+        $title = $this->request->getParameter("title");
+        $content = $this->request->getParameter("content");
+        $this->post->create($title, $content);
+        $this->redirect('Admin','index/');
+    }
+
+
 }
 

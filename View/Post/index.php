@@ -10,7 +10,7 @@
 <hr />
 </aside>
 	<header>
-	    <h1 id="answerTitles">Commentaires à <?= $this->clean($post['title']) ?></h1>
+	    <h1 id="answerTitles">Derniers commentaires à <?= $this->clean($post['title']) ?></h1>
 	</header>
 	<?php foreach ($comments as $comment): ?>
 	    <p><?= $this->clean($comment['author']) ?> dit :</p>
@@ -18,10 +18,16 @@
 	<?php endforeach; ?>
 	<hr />
 	<form method="post" action="post/commenting">
-	    <input id="author" name="author" type="text" placeholder="Votre pseudo" required /><br />
-	    <textarea id="commentText" name="content" rows="4" placeholder="Votre commentaire" required></textarea><br />
-	    <input type="hidden" name="id" value="<?= $post['id'] ?>" />
-	    <button type="submit" class="btn btn-primary" >Envoyer</button>
+		<div class="form-group">
+	    	<input class="form-control" id="author" name="author" type="text" placeholder="Votre pseudo" required /><br />
+		</div>
+	    <div class="form-group">
+	    	<textarea class="form-control" id="commentText" name="content" rows="4" placeholder="Votre commentaire" required></textarea><br />
+		</div>
+	    <div class="form-group">
+	    	<input type="hidden" name="id" value="<?= $post['id'] ?>" />
+	    	<button type="submit" class="btn btn-primary" >Envoyer</button>
+		</div>
 	</form>
 </aside>
 

@@ -34,6 +34,9 @@
             <li class="nav-item">
               <a class="nav-link" href="admin/"><p>Se connecter</p></a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="connection/disconnect">Se déconnecter</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -56,11 +59,9 @@
 
     <!-- Page Main Content -->  
   <div class="container">
-    <div class="row">
       <div id="content">
         <?= $content ?>
       </div>
-    </div>
   </div>
 
   <!-- Page Footer -->

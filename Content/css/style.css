@@ -154,7 +154,7 @@ h2 {
 /** Administration **/
 
 .adminList h2 {
-  color: #fff;
+  color: #000;
   font-size: 1.2em;
 }
 
@@ -162,4 +162,8 @@ h2 {
 .adminList time {
   color: #555;
   font-size: 0.8em;
+}
+
+.fixed-top {
+  background-color: rgba(255, 255, 255, 0.8);
 }
