@@ -15,6 +15,10 @@
 	<?php foreach ($comments as $comment): ?>
 	    <p><?= $this->clean($comment['author']) ?> dit :</p>
 	    <p><?= $this->clean($comment['content']) ?></p>
+	    <form method="post" action="post/reportComment">
+	    	<input type="hidden" name="postId" value="<?= $post['id'] ?>" />
+		    <button type="submit" name="comId" value="<?= $this->clean($comment['id']) ?>" class="btn btn-primary btn-sm">Signaler</button>
+		</form>
 	<?php endforeach; ?>
 	<hr />
 	<form method="post" action="post/commenting">

@@ -54,5 +54,13 @@ class ControllerPost extends Controller {
 
     }
 
+    // Action to report a bad comment
+    public function reportComment() {
+        $commentId = $this->request->getParameter("comId");
+        $postId = $this->request->getParameter("postId");
+        $this->comment->report($commentId);
+        $this->redirect('Post','index/'.$postId);
+    }
+
 }
 
