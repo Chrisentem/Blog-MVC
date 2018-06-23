@@ -6,7 +6,7 @@
             <a href="<?= "post/index/" . $this->clean($post['id']) ?>">
                 <h1 class="postTitle"><?= $this->clean($post['title']) ?></h1>
             </a>
-            <time><?= $this->clean($post['date']) ?></time>
+            publié le <time><?= $this->clean($post['date']) ?></time>
         </header>
         <p><?= $this->clean($post['content']) ?></p>
     </article>

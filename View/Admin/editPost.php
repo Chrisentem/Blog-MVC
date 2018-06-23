@@ -5,8 +5,9 @@
     	<div class="row">
     		<div class="adminList col-md-6">
 		        <h2><?= $this->clean($post['title']) ?></h2>
-		        <time>Crée le : <?= $this->clean($post['date']) ?></time>
-		        <p><?= $this->clean($post['content']) ?></p>
+		        Crée le : <time><?= $this->clean($post['date']) ?></time>
+		        <!-- <p><?= $this->clean($post['content']) ?></p> -->
+		        <p><?= $post['content'] ?></p>
 		    </div>
 			<div class="col-md-6">
 		    	<form action="<?= 'admin/savePost/' . $this->clean($post['id']) ?>" method="post">
