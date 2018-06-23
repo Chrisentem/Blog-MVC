@@ -11,13 +11,22 @@ require_once 'Framework/Model.php';
 class Comment extends Model {
 	
     /**
-     * Returns PDOStatment array with Comments data
+     * Returns PDOStatment array with Comments data for one Post
      */
-	public function getComments($postId) {
-		$sql = 'SELECT COM_ID as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID FROM T_COMMENT WHERE POST_ID=? ORDER BY id DESC LIMIT 5';
+	public function getComments($postId, int $max = 5) {
+		$sql = 'SELECT COM_ID as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID FROM T_COMMENT WHERE POST_ID=? ORDER BY id DESC LIMIT' . $max;
 		$comments = $this->executeRequest($sql, array($postId));
 		return $comments;
 	}
+
+    /**
+     * Returns PDOStatment array with all Comments data
+     */
+    public function getAllComments() {
+        $sql = 'SELECT c.com_id as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID, COUNT(REPORT_ID) as reports FROM T_COMMENT_REPORT cr RIGHT JOIN T_COMMENT c ON cr.com_id = c.com_id GROUP BY c.com_id';
+        $allComments = $this->executeRequest($sql);
+        return $allComments;
+    }
 
     /**
      * Add a new comment to DB
@@ -40,16 +49,5 @@ class Comment extends Model {
         $line = $result->fetch();  // Result always return 1 line
         return $line['NumComments'];
     }
-
-    /** Report bad comments
-     *
-     *
-     **/
-    public function report($comId) {
-            $sql = 'INSERT INTO T_COMMENT_REPORT(COM_ID, DATE_REPORT) VALUES (? ,?)';
-            $date = date(DATE_W3C);
-            $this->executeRequest($sql, [$comId, $date]);
-    }
-
 
  }
