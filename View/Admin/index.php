@@ -1,31 +1,43 @@
 <?php $this->title = "Mon Blog - Administration" ?>
 
 <header>
-<h2>Administration</h2>
+<h1>Administration du Blog</h1>
 <p>Bienvenue, <?= $this->clean($login) ?> !
 Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($numComments) ?> commentaire(s).</p>
 </header>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <ul class="list-group">
-            <?php foreach ($posts as $post): ?>
-                <li class="list-group-item">
-                	<div class="row">
-                		<div class="adminList col-md-6">
-            		        <h2><?= $this->clean($post['title']) ?></h2>
-            		        <time>Crée le : <?= $this->clean($post['date']) ?></time>
-            		    </div>
-            		    <div class="col-md-6">
-                            <a class="btn btn-primary btn-sm" href="<?= "admin/editPost/" . $this->clean($post['id']) ?>">Editer</a>
-                            <a class="btn btn-danger btn-sm" href="<?= "admin/deletePost/" . $this->clean($post['id']) ?>">Supprimer</a>
-                    	</div>
-                </li>
-                <hr />
-            <?php endforeach; ?>
-            </ul>
+        <div class="col-md-12">
+            <header>
+              <h2>Gérer les billets</h2>
+            </header>
+            <div class="table-responsive">
+              <table class="table table-hover table-striped table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Éditer</th>
+                    <th scope="col">Supprimer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php foreach ($posts as $post): ?>
+                    <tr>
+                      <td><?= $this->clean($post['title']) ?></td>
+                      <td><time><?= $this->clean($post['date']) ?></time></td>
+                      <td><a class="btn btn-primary btn-sm" href="<?= "admin/editPost/" . $this->clean($post['id']) ?>">Editer</a></td>
+                      <td><a class="btn btn-danger btn-sm" href="<?= "admin/deletePost/" . $this->clean($post['id']) ?>">Supprimer</a></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
         </div>
-        <div class="col-md-8">
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
             <header>
                 <h2>Écrire un nouveau billet</h2>
             </header>
