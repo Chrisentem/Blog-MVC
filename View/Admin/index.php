@@ -1,5 +1,6 @@
 <?php $this->title = "Mon Blog - Administration" ?>
-
+  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
 <header>
 <h1>Administration du Blog</h1>
 <p>Bienvenue, <?= $this->clean($login) ?> !
@@ -16,7 +17,7 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
                         <input class="form-control" id="title" name="title" type="text" placeholder="Titre du billet" required />
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" id="content" name="content" rows="4" placeholder="Votre texte" required></textarea>
+                        <textarea class="admin-editor" id="content" name="content" rows="4" placeholder="Votre texte" required></textarea>
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="id" value="<?= $post['id'] ?>" />
