@@ -14,7 +14,7 @@ class Comment extends Model {
      * Returns PDOStatment array with Comments data for one Post
      */
 	public function getComments($postId, int $max = 5) {
-		$sql = 'SELECT COM_ID as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID FROM T_COMMENT WHERE POST_ID=? ORDER BY id DESC LIMIT' . $max;
+		$sql = 'SELECT COM_ID as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID FROM T_COMMENT WHERE POST_ID=? ORDER BY id DESC LIMIT 0,' . $max;
 		$comments = $this->executeRequest($sql, array($postId));
 		return $comments;
 	}

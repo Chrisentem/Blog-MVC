@@ -32,7 +32,7 @@ class ControllerAdmin extends ControllerSecured
         $allComments = $this->comment->getAllComments();
         $login = $this->request->getSession()->getAttribute("login");
 
-        $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts, 'numReports' => $numReports, 'allComments' => $allComments));
+        $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts, 'allComments' => $allComments));
     }
 
     // Action to edit a Post
