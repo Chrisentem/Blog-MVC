@@ -9,6 +9,26 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
     <div class="row">
         <div class="col-md-12">
             <header>
+                <h2>Écrire un nouveau billet</h2>
+            </header>
+            <form method="post" action="admin/writing">
+                    <div class="form-group">
+                        <input class="form-control" id="title" name="title" type="text" placeholder="Titre du billet" required />
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="content" name="content" rows="4" placeholder="Votre texte" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="<?= $post['id'] ?>" />
+                        <button type="submit" class="btn btn-primary" >Sauvegarder</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <header>
               <h2>Gérer les billets</h2>
             </header>
             <div class="table-responsive">
@@ -69,25 +89,4 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
           </div>
         </div>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-12">
-            <header>
-                <h2>Écrire un nouveau billet</h2>
-            </header>
-            <form method="post" action="admin/writing">
-                    <div class="form-group">
-                        <input class="form-control" id="title" name="title" type="text" placeholder="Titre du billet" required />
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" id="content" name="content" rows="4" placeholder="Votre texte" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="hidden" name="id" value="<?= $post['id'] ?>" />
-                        <button type="submit" class="btn btn-primary" >Sauvegarder</button>
-                    </div>
-            </form>
-        </div>
-    </div>
 </div>
-<a id="decoLink" href="connection/disconnect">Se déconnecter</a>

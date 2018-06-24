@@ -31,12 +31,6 @@
             <li class="nav-item">
               <a class="nav-link" href="">Contact</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="admin/"><p>Se connecter</p></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="connection/disconnect">Se déconnecter</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -67,7 +61,15 @@
   <!-- Page Footer -->
   <footer id="blogFooter">
     <div class="container">
-      <p class="copyright text-muted">Copyright &copy; 2018 - Blog réalisé avec PHP, HTML5 et Bootstrap 4.</p>
+        <div class="row">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <?php if(isset($_SESSION['login'])){ echo '<a class="nav-link" href="connection/disconnect">Se déconnecter</a>';}else{echo '<a class="nav-link" href="admin/">Se connecter</a>';} ?>
+            </li>
+          </ul>
+        </div>
+
+        <p class="copyright text-muted">Copyright &copy; 2018 - Blog réalisé avec PHP, HTML5 et Bootstrap 4.</p>
     </div>
   </footer>
 

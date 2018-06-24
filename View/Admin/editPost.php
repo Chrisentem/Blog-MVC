@@ -24,6 +24,4 @@
 					</div>
 				</form>
         	</div>
-        </div>
-
-<a id="decoLink" href="connection/disconnect">Se déconnecter</a>		
+        </div>		
