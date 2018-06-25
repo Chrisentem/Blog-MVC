@@ -78,7 +78,7 @@ class Post extends Model {
     * @param string $title Post title
     **/
     public function create($title, $content){
-        $sql = 'INSERT INTO T_POST(POST_TITLE, POST_CONTENT, POST_DATE) VALUES (? ,? ,?)';
+        $sql = 'INSERT INTO T_POST(POST_TITLE, POST_CONTENT, POST_DATE) VALUES(? ,? ,?)';
         $date = date(DATE_W3C);
         $this->executeRequest($sql, [$title, $content, $date]);
     }

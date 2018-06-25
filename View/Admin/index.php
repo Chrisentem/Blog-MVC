@@ -1,4 +1,5 @@
 <?php $this->title = "Mon Blog - Administration" ?>
+<!-- TinyMCE Editor loading -->
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
 <header>
@@ -12,15 +13,16 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
             <header>
                 <h2>Écrire un nouveau billet</h2>
             </header>
-            <form method="post" action="admin/writing">
+            <form action="admin/writing" method="post">
                     <div class="form-group">
-                        <input class="form-control" id="title" name="title" type="text" placeholder="Titre du billet" required />
+                        <input class="form-control" id="new_title" name="new_title" type="text" placeholder="Titre du billet" required />
                     </div>
                     <div class="form-group">
-                        <textarea class="admin-editor" id="content" name="content" rows="4" placeholder="Votre texte" required></textarea>
+                        <!-- Watch out ! required attribute does not work properly with tiny-->
+                        <textarea class="admin-editor" id="new_content" name="new_content" rows="4" placeholder="Votre texte"></textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                      <button type="submit" class="btn btn-primary">Sauvegarder</button>
                     </div>
             </form>
         </div>
