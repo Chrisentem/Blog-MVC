@@ -8,7 +8,7 @@
             </a>
             publié le <time><?= $this->clean($post['date']) ?></time>
         </header>
-        <p><?= $this->clean($post['content']) ?></p>
+        <p><?= $post['content'] ?></p>
     </article>
     <hr />
 <?php endforeach; ?>

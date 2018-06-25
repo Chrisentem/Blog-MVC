@@ -5,22 +5,25 @@
         <h1 class="postTitle"><?= $this->clean($post['title']) ?></h1>
         publié le <time><?= $this->clean($post['date']) ?></time>
     </header>
-    <p><?= $this->clean($post['content']) ?></p>
+    <p><?= $post['content'] ?></p>
 </article>
 <hr />
 </aside>
 	<header>
-	    <h1 id="answerTitles">Derniers commentaires à <?= $this->clean($post['title']) ?></h1>
+	    <h3>Derniers commentaires à <?= $this->clean($post['title']) ?></h3>
 	</header>
 	<?php foreach ($comments as $comment): ?>
-	    <p><?= $this->clean($comment['author']) ?> dit :</p>
+	    <p><?= $this->clean($comment['author']) ?> a écrit :</p>
 	    <p><?= $this->clean($comment['content']) ?></p>
 	    <form method="post" action="post/reportComment">
 	    	<input type="hidden" name="postId" value="<?= $post['id'] ?>" />
-		    <button type="submit" name="comId" value="<?= $this->clean($comment['id']) ?>" class="btn btn-primary btn-sm">Signaler</button>
+		    <button type="submit" name="comId" value="<?= $this->clean($comment['id']) ?>" class="btn btn-secondary btn-sm">Signaler</button>
 		</form>
 	<?php endforeach; ?>
 	<hr />
+	<header>
+	    <h3>Ecrire un commentaire</h3>
+	</header>
 	<form method="post" action="post/commenting">
 		<div class="form-group">
 	    	<input class="form-control" id="author" name="author" type="text" placeholder="Votre pseudo" required /><br />

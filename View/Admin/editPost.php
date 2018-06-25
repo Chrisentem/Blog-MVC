@@ -1,16 +1,10 @@
 <?php $this->title = "Mon Blog - Administration" ?>
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
-<h2>Administration</h2>
+<h1>Administration - Modifier un billet</h1>
 
     	<div class="row">
-    		<div class="adminList col-md-6">
-		        <h2><?= $this->clean($post['title']) ?></h2>
-		        Crée le : <time><?= $this->clean($post['date']) ?></time>
-		        <!-- <p><?= $this->clean($post['content']) ?></p> -->
-		        <p><?= $post['content'] ?></p>
-		    </div>
-			<div class="col-md-6">
+    		<div class="col-md-6">
 		    	<form action="<?= 'admin/savePost/' . $this->clean($post['id']) ?>" method="post">
 		    		<div class="form-group">
 		    			<label for="title">Votre titre</label>
@@ -25,4 +19,17 @@
 					</div>
 				</form>
         	</div>
+    		<div class="col-md-6">
+    			<div class="row">
+    				<div class="col-12">
+    					<span style="color: #bfbfbf; font-size: 1rem; font-weight: 400;">Aperçu du billet</span>
+    				</div>
+    				<div class="admin-editpost col-12">
+				        <h3><?= $this->clean($post['title']) ?></h3>
+				        Crée le : <time><?= $this->clean($post['date']) ?></time>
+				        <!-- <p><?= $this->clean($post['content']) ?></p> -->
+				        <p><?= $post['content'] ?></p>
+				    </div>
+		    	</div>
+		    </div>
         </div>		

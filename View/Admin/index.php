@@ -1,6 +1,6 @@
 <?php $this->title = "Mon Blog - Administration" ?>
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea.admin-editor' });</script>
 <header>
 <h1>Administration du Blog</h1>
 <p>Bienvenue, <?= $this->clean($login) ?> !
@@ -21,7 +21,7 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="id" value="<?= $post['id'] ?>" />
-                        <button type="submit" class="btn btn-primary" >Sauvegarder</button>
+                        <button type="submit" class="btn btn-primary">Sauvegarder</button>
                     </div>
             </form>
         </div>
