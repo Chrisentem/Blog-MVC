@@ -60,4 +60,15 @@ class Comment extends Model {
         $this->executeRequest($sql, [$comId, $comId]);
     }
 
+        /** Update a Comment
+    *
+    * @param int $comId Comment id
+    * @param string $comContent Comment content
+    **/    
+    public function update($comContent, $comId){
+        $sql = 'UPDATE T_COMMENT SET COM_CONTENT = ?, COM_DATE_MODERATE = ? WHERE COM_ID = ?';
+        $date = date(DATE_W3C);
+        $this->executeRequest($sql, [$comContent, $date, $comId]);
+    }
+
  }

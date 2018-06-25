@@ -20,7 +20,6 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
                         <textarea class="admin-editor" id="content" name="content" rows="4" placeholder="Votre texte" required></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="id" value="<?= $post['id'] ?>" />
                         <button type="submit" class="btn btn-primary">Sauvegarder</button>
                     </div>
             </form>
@@ -81,7 +80,7 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
                     <td><time><?= $this->clean($comment['date']) ?></time></td>
                     <td><?= $this->clean($comment['content']) ?></td>
                     <td><?= $this->clean($comment['reports']) ?></td>
-                    <td><a class="btn btn-primary btn-sm" href="<?= "admin/editCom/" . $this->clean($comment['id']) ?>">Modérer</a></td>
+                    <td><form method="post" action="admin/editCom/<?= $this->clean($comment['id']) ?>"><input class="form-control" type="text" name="com_content"><button type="submit" class="btn btn-primary btn-sm">Modérer</button></form></td>
                     <td><a class="btn btn-danger btn-sm" href="<?= "admin/deleteCom/" . $this->clean($comment['id']) ?>">Supprimer</a></td>
                   </tr>
                 <?php endforeach; ?>

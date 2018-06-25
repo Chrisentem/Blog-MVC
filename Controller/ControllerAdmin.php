@@ -76,6 +76,13 @@ class ControllerAdmin extends ControllerSecured
         $this->redirect('Admin','index/');
     }
 
+    // Action to modify - moderate an existing comment
+    public function editCom() {
+        $comId = $this->request->getParameter("id");
+        $comContent = $this->request->getParameter("com_content");
+        $this->comment->update($comContent, $comId);
+        $this->redirect('Admin','index/');
+    }
 
 }
 
