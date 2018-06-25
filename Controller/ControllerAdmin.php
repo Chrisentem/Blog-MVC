@@ -69,6 +69,13 @@ class ControllerAdmin extends ControllerSecured
         $this->redirect('Admin','index/');
     }
 
+    // Action to delete a comment and its reports when exist from DB
+    public function deleteCom() {
+        $comId = $this->request->getParameter("id");
+        $this->comment->delete($comId);
+        $this->redirect('Admin','index/');
+    }
+
 
 }
 

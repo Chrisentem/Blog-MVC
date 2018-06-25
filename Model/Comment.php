@@ -50,4 +50,14 @@ class Comment extends Model {
         return $line['NumComments'];
     }
 
+    /**
+     * Delete a comment and its reports when exist from DB 
+     * 
+     * @param int $comId Comment id
+     */
+    public function delete($comId){
+        $sql = 'DELETE FROM T_COMMENT WHERE COM_ID = ?; DELETE FROM T_COMMENT_REPORT WHERE COM_ID = ?';
+        $this->executeRequest($sql, [$comId, $comId]);
+    }
+
  }
