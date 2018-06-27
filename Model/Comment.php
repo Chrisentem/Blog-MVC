@@ -23,7 +23,7 @@ class Comment extends Model {
      * Returns PDOStatment array with all Comments data
      */
     public function getAllComments() {
-        $sql = 'SELECT c.com_id as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID, COUNT(REPORT_ID) as reports FROM T_COMMENT_REPORT cr RIGHT JOIN T_COMMENT c ON cr.com_id = c.com_id GROUP BY c.com_id';
+        $sql = 'SELECT c.com_id as id, COM_DATE as date, COM_AUTHOR as author, COM_CONTENT as content, POST_ID, COUNT(REPORT_ID) as reports FROM T_COMMENT_REPORT cr RIGHT JOIN T_COMMENT c ON cr.com_id = c.com_id GROUP BY c.com_id ORDER BY reports DESC';
         $allComments = $this->executeRequest($sql);
         return $allComments;
     }
