@@ -19,6 +19,11 @@ class Session
         session_start();
     }
 
+    public function connectUser($userId, $login){
+        $this->setAttribute("userId", $userId);
+        $this->setAttribute("login", $login);
+    }
+
     /**
      * Destroy current session
      */

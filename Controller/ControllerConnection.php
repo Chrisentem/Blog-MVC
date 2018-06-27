@@ -31,10 +31,11 @@ class ControllerConnection extends Controller
             // Check if Login exist and if Password is valid with User method connect
             if ($this->user->connect($login, $pw)) {
                 $user = $this->user->getUser($login);
-                $this->request->getSession()->setAttribute("userId",
-                        $user['userId']);
-                $this->request->getSession()->setAttribute("login",
-                        $user['login']);
+               $this->request->getSession()->connectUser($user['userId'], $user['login']);
+                // $this->request->getSession()->setAttribute("userId",
+                //         $user['userId']);
+                // $this->request->getSession()->setAttribute("login",
+                //         $user['login']);
                 $this->redirect("admin");
             }
             else
