@@ -8,6 +8,7 @@
   <link href="Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->  
   <link href="Content/css/style.css" rel="stylesheet">
+  <link href="Content/css/style.css" rel="stylesheet">
   <title><?= $title ?></title>
 </head>
 <body>
@@ -78,8 +79,8 @@
           echo '<a class="btn btn-secondary btn-sm" href="admin/">Se connecter</a></li>';
         } ?>
       </div>
-      <div class="row">
-          <p class="copyright text-muted">Copyright &copy; 2018 - Blog réalisé avec PHP, HTML5 et Bootstrap 4.</p>
+      <div class="row text-center">
+          <p class="copyright">Copyright &copy; 2018 - Blog réalisé avec PHP, HTML5 et Bootstrap 4.</p>
       </div>
     </div>
   </footer>

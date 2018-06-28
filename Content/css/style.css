@@ -112,17 +112,46 @@ html, body {
 }
 
 body {
-    color: #bfbfbf;
-    background: #333;
+    color: #082d3e;
+    background: #fff;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100%;
+}
+
+.navbar-light .navbar-brand {
+  color: #beac7a;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(190, 172, 122, 1);
+}
+
+.fixed-top {
+  background-color: rgba(10, 12, 11, 0.9);
+}
+
+header.masthead .page-heading, header.masthead .site-heading a:hover {
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: none;
 }
 
 h1 {
-    color: white;
+    color: #082d3e;
 }
 
 h2 {
-    color: white;
+    color: #082d3e;
 }
 
 .postTitle {
@@ -135,12 +164,8 @@ h2 {
 
 #blogTitle {
     text-align: center;
+    color: #c0bec1;
 }
-
-#answerTitles {
-    font-size: 1em;
-}
-
 
 #decoLink {
     color: #bfbfbf;
@@ -151,12 +176,27 @@ h2 {
   margin-right: 5px;
 }
 
-
-/** Administration **/
-
-.text-center .row {
-  justify-content: space-around;
+#blogFooter {
+  clear: both;
+  position: relative;
+  z-index: 10;
+  height: 3em;
+  margin-top: 20px;
 }
+
+/** Connection **/
+
+.text-center {
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.container {
+  align-content: space-between;
+  min-height: 90%;
+}
+
+/** Admin **/
 
 .admin-editpost {
 display: block;
@@ -178,8 +218,4 @@ transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
 .admin-editpost time {
   color: #555;
-}
-
-.fixed-top {
-  background-color: rgba(255, 255, 255, 0.8);
 }

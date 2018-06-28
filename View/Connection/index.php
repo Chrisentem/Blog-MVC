@@ -1,10 +1,12 @@
 <?php $this->title = "Mon Blog - Connexion" ?>
 
-<header>
-	<p>Vous devez être connecté pour accéder à cette zone.</p>
-</header>
-<div class="text-center">
-	<div class="row">
+<div class="container">
+	<div class="row text-center">
+		<header>
+			<p>Vous devez être connecté pour accéder à cette zone.</p>
+		</header>
+	</div>
+	<div class="row text-center">
         <form class="form-signin" action="connection/connect" method="post">
 			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
 			<div class="form-group">
@@ -16,9 +18,9 @@
 			<button class="btn btn-primary" type="submit">Connexion</button>
 		</form>
 	</div>
-</div>
-<div class="container">
-	<?php if (isset($msgError)): ?>
-	    <p><?= $msgError ?></p>
-	<?php endif; ?>
+	<div class="row">
+		<?php if (isset($msgError)): ?>
+		    <p><?= $msgError ?></p>
+		<?php endif; ?>
+	</div>
 </div>
