@@ -158,6 +158,12 @@ h2 {
     margin-bottom : 0px;
 }
 
+.readmore {
+  color: #beac7a;
+  font-size: 0.8em;
+  margin-left: 15px;
+}
+
 .commentAuthor {
 	color: #d66666;
 }

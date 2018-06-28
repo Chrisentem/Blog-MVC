@@ -88,4 +88,14 @@ class View {
         return htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false);
     }
 
+    private function truncate($text, $limit = 50, $ellipsis = '...') {
+        $words = preg_split("/[\n\r\t ]+/", $text, $limit + 1, PREG_SPLIT_NO_EMPTY);
+        if (count($words) > $limit ) {
+            array_pop($words);
+            $text = implode(' ', $words);
+            $text = $text . $ellipsis;
+        }
+        return $text;
+    }
+
 }

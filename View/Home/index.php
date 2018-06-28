@@ -3,12 +3,10 @@
 <?php foreach ($posts as $post): ?>
     <article>
         <header>
-            <a href="<?= "post/index/" . $this->clean($post['id']) ?>">
-                <h1 class="postTitle"><?= $this->clean($post['title']) ?></h1>
-            </a>
-            publié le <time><?= $this->clean($post['date']) ?></time>
+            <h1 class="postTitle"><?= $this->clean($post['title']) ?></h1>
+            <p>publié le <time><?= $this->clean($post['date']) ?></time></p>
         </header>
-        <p><?= $post['content'] ?></p>
+        <p><?= $this->truncate($post['content']) ?><a class="readmore" href="post/index/<?= $this->clean($post['id']) ?>">Lire la suite</a></p>
     </article>
     <hr />
 <?php endforeach; ?>
