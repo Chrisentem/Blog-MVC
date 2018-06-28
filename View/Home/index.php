@@ -4,7 +4,7 @@
     <article>
         <header>
             <h1 class="postTitle"><?= $this->clean($post['title']) ?></h1>
-            <p>publié le <time><?= $this->clean($post['date']) ?></time></p>
+            <time>publié le <?= $this->clean($post['date']) ?></time>
         </header>
         <p><?= $this->truncate($post['content']) ?><a class="readmore" href="post/index/<?= $this->clean($post['id']) ?>">Lire la suite</a></p>
     </article>

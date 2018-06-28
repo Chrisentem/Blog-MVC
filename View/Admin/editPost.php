@@ -2,7 +2,6 @@
 <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
 <h1>Administration - Modifier un billet</h1>
-
     	<div class="row">
     		<div class="col-md-6">
 		    	<form action="<?= 'admin/savePost/' . $this->clean($post['id']) ?>" method="post">
@@ -26,7 +25,7 @@
     				</div>
     				<div class="admin-editpost col-12">
 				        <h3><?= $this->clean($post['title']) ?></h3>
-				        Crée le : <time><?= $this->clean($post['date']) ?></time>
+				        <time>Crée le : <?= $this->clean($post['date']) ?></time>
 				        <!-- <p><?= $this->clean($post['content']) ?></p> -->
 				        <p><?= $post['content'] ?></p>
 				    </div>

@@ -154,6 +154,11 @@ h2 {
     color: #082d3e;
 }
 
+time {
+  color: #746d4b;
+  font-size: 0.7em;
+}
+
 .postTitle {
     margin-bottom : 0px;
 }
@@ -164,13 +169,13 @@ h2 {
   margin-left: 15px;
 }
 
-.commentAuthor {
-	color: #d66666;
-}
-
 #blogTitle {
     text-align: center;
     color: #c0bec1;
+}
+
+.comment p {
+  margin-bottom: 5px;
 }
 
 #decoLink {
