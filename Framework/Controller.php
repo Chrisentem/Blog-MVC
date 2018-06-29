@@ -49,14 +49,14 @@ abstract class Controller {
 
   /**
   * Abstract method corresponding to the default action
-  * Require derived classes to implement this default action
+  * As default method (action) called, this method must be implemented in each child controller
   **/
   public abstract function index();
 
   /**
   * Generate the view associated with the current controller
   * 
-  * @param array $viewData required data to generate the view
+  * @param array $viewData required data to generate the view (data are mostly extracted from DB with model class)
   * @param string $action Action associated with the view (let a controller to generate a view for a specific action)
   */  
   protected function generateView($viewData = array(), $action = null) {
@@ -72,7 +72,7 @@ abstract class Controller {
 
     // Instanciate a new object View
     $vue = new View($actionView, $controllerView);
-    // Generate the view
+    // Generate the view with data defined or called in controller action method
     $vue->generate($viewData);
   }
 

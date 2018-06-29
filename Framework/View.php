@@ -37,9 +37,9 @@ class View {
      * 
      * @param array $data Data required to generate the view
      */
-    public function generate($data) {
+    public function generate($viewData) {
         // Generation of the specific part of the view
-        $content = $this->generateFile($this->file, $data);
+        $content = $this->generateFile($this->file, $viewData);
         // We define a local variable accessible by the view for the webroot
         // It is the path to the website on the server
         // it is needed for URLs with type controleur/action/id
@@ -60,10 +60,10 @@ class View {
      * @return string Result of the view generation
      * @throws Exception If view file is missing
      */
-    private function generateFile($file, $data) {
+    private function generateFile($file, $viewData) {
         if (file_exists($file)) {
             // Let all the values in table $data accessible in view
-            extract($data);
+            extract($viewData);
             // Starting output temporisation
             ob_start();
             // Including the view file
