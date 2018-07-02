@@ -8,55 +8,52 @@
   <link href="Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->  
   <link href="Content/css/style.css" rel="stylesheet">
-  <link href="Content/css/style.css" rel="stylesheet">
   <title><?= $title ?></title>
 </head>
 <body>
-
-<?php if((isset($_SESSION['login']) && ($_SERVER['REQUEST_URI'] != $webRoot)) || ($_SERVER['REQUEST_URI'] == $webRoot . 'connection/')) {
-    }
-    else {
-        echo '
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-          <div class="container">
-            <a class="navbar-brand" href="">Jean Forteroche - Blog</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              Menu
-              <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="">Home</a>
-                </li>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="">Jean Forteroche - Blog</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu<i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="">Accueil</a>
+          </li>
+          <?php if(isset($_SESSION['login'])) {
+              echo '<li class="nav-item"><a class="nav-link" href="admin/">Tableau de bord</a></li>';
+              echo '<li class="nav-item"><a class="nav-link" href="connection/disconnect">Se déconnecter</a></li>';
+          } ?>
+<!--  Extra links possible          
                 <li class="nav-item">
                   <a class="nav-link" href="">About</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="">Contact</a>
                 </li>
-              </ul>
+              -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('Content/img/home-bg.jpg')">
+    <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <a href=""><h1 id="blogTitle">Billet simple pour l'Alaska</h1></a>
+              <span class="subheading">Découvrez mon dernier ouvrage</span>
             </div>
           </div>
-        </nav>
-        <!-- Page Header -->
-        <header class="masthead" style="background-image: url(\'Content/img/home-bg.jpg\')">
-          <div class="overlay"></div>
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                  <div class="site-heading">
-                    <a href=""><h1 id="blogTitle">Billet simple pour l\'Alaska</h1></a>
-                    <span class="subheading">Découvrez mon dernier ouvrage</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>';
-    }
-  ?>
+        </div>
+      </div>
+    </div>
+  </header>
 
     <!-- Page Main Content -->  
   <div class="container">
@@ -67,15 +64,10 @@
   <footer id="blogFooter">
     <div class="container">
       <div class="row">
-        <?php if(isset($_SESSION['login'])) {
-          echo '<a class="btn btn-secondary btn-sm" href="' . $webRoot . '">Accueil du site</a>';
-          echo '<a class="btn btn-secondary btn-sm" href="admin/">Tableau de bord</a>';
-          echo '<a class="btn btn-secondary btn-sm" href="connection/disconnect">Se déconnecter</a>';
-        }
-        elseif ($_SERVER['REQUEST_URI'] == $webRoot . 'connection/') {
+        <?php if ($_SERVER['REQUEST_URI'] == $webRoot . 'connection/') {
           echo '<a class="btn btn-secondary btn-sm" href="' . $webRoot . '">Accueil du site</a>';
         }
-        else {
+        elseif (!isset($_SESSION['login'])) {
           echo '<a class="btn btn-secondary btn-sm" href="admin/">Se connecter</a></li>';
         } ?>
       </div>

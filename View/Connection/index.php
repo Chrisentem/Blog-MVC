@@ -8,14 +8,14 @@
 	</div>
 	<div class="row text-center">
         <form class="form-signin" action="connection/connect" method="post">
-			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+			<h1 class="h3 mb-3 font-weight-normal">Gestion du site</h1>
 			<div class="form-group">
 				<input class="form-control" name="login" type="text" placeholder="Entrez votre login" required autofocus>
 			</div>
 			<div class="form-group">
 				<input class="form-control" name="pw" type="password" placeholder="Entrez votre mot de passe" required>
 			</div>
-			<button class="btn btn-primary" type="submit">Connexion</button>
+			<button class="btn btn-primary" type="submit">Se connecter</button>
 		</form>
 	</div>
 	<div class="row">

@@ -1,7 +1,5 @@
-<?php $this->title = "Mon Blog - Administration" ?>
-<!-- TinyMCE Editor loading -->
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea.admin-editor' });</script>
+<?php $this->title = "Administration - Accueil" ?>
+
 <header>
 <h1>Administration du Blog</h1>
 <p>Bienvenue, <?= $this->clean($login) ?> !

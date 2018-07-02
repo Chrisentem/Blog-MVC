@@ -1,6 +1,5 @@
-<?php $this->title = "Mon Blog - Administration" ?>
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea.admin-editor' });</script>
+<?php $this->title = "Administration - Billet" ?>
+
 <h1>Administration - Modifier un billet</h1>
     	<div class="row">
     		<div class="col-md-6">

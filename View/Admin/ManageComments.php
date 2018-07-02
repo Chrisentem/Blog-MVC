@@ -1,4 +1,4 @@
-<?php $this->title = "Mon Blog - Gestion des commentaires" ?>
+<?php $this->title = "Administration - Commentaires" ?>
 
 <header>
 <h1>Administration du Blog</h1>
@@ -28,7 +28,7 @@
 		                		<td><time><?= $this->clean($comment['date']) ?></time></td>
 		                		<td><?= $this->clean($comment['content']) ?></td>
 		                		<td><?= $this->clean($comment['reports']) ?></td>
-		                		<td><a class="btn btn-danger btn-sm" href="<?= "admin/validCom/" . $this->clean($comment['id']) ?>">Valider</a></td>
+		                		<td><a class="btn btn-success btn-sm" href="<?= "admin/validCom/" . $this->clean($comment['id']) ?>">Valider</a></td>
 		                		<td><a class="btn btn-danger btn-sm" href="<?= "admin/deleteCom/" . $this->clean($comment['id']) ?>">Supprimer</a></td>
 		                	</tr>
 		                <?php endforeach; ?>

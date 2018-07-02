@@ -1,0 +1,32 @@
+/** Admin CSS **/
+
+.main {
+	margin-top: 60px;
+}
+
+time {
+	color: #746d4b;
+	font-size: 1em;
+}
+
+.admin-editpost {
+	display: block;
+	width: 100%;
+	margin-top: 8px;
+	padding: .375rem .75rem;
+	line-height: 1.5;
+	color: #495057;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.admin-editpost h2 {
+  color: #000;
+}
+
+.admin-editpost time {
+  color: #555;
+}
