@@ -24,15 +24,22 @@ class ControllerAdmin extends ControllerSecured
         $this->comment = new Comment();
     }
 
+    // Action to load Admin homepage
     public function index()
     {
         $numPosts = $this->post->getNumPosts();
         $posts = $this->post->getPosts($numPosts);
         $numComments = $this->comment->getNumComments();
-        $allComments = $this->comment->getAllComments();
         $login = $this->request->getSession()->getAttribute("login");
 
-        $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts, 'allComments' => $allComments));
+        $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts));
+    }
+
+    // Action to load Comments management page
+    public function manageComments()
+    {
+        $allComments = $this->comment->getAllComments();
+        $this->generateView(array('allComments' => $allComments));
     }
 
     // Action to edit a Post
@@ -76,12 +83,11 @@ class ControllerAdmin extends ControllerSecured
         $this->redirect('Admin','index/');
     }
 
-    // Action to modify - moderate an existing comment
-    public function editCom() {
+    // Action to validate - moderate an existing comment by removing reports
+    public function validCom() {
         $comId = $this->request->getParameter("id");
-        $comContent = $this->request->getParameter("com_content");
-        $this->comment->update($comContent, $comId);
-        $this->redirect('Admin','index/');
+        $this->comment->deleteReports($comId);
+        $this->redirect('Admin','manageComments');
     }
 
 }

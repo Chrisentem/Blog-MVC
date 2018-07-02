@@ -60,6 +60,16 @@ class Comment extends Model {
         $this->executeRequest($sql, [$comId, $comId]);
     }
 
+    /**
+     * Validate a reported comment and delete reports from DB 
+     * 
+     * @param int $comId
+     */
+    public function deleteReports($comId){
+        $sql = 'DELETE FROM T_COMMENT_REPORT WHERE COM_ID = ?';
+        $this->executeRequest($sql, [$comId]);
+    }
+
         /** Update a Comment
     *
     * @param int $comId Comment id
@@ -69,6 +79,16 @@ class Comment extends Model {
         $sql = 'UPDATE T_COMMENT SET COM_CONTENT = ?, COM_DATE_MODERATE = ? WHERE COM_ID = ?';
         $date = date(DATE_W3C);
         $this->executeRequest($sql, [$comContent, $date, $comId]);
+    }
+
+    /** Report bad comments
+     *
+     * @param int $comId Comment id
+     **/
+    public function report($comId) {
+        $sql = 'INSERT INTO T_COMMENT_REPORT(COM_ID, DATE_REPORT) VALUES (? ,?)';
+        $date = date(DATE_W3C);
+        $this->executeRequest($sql, [$comId, $date]);
     }
 
  }
