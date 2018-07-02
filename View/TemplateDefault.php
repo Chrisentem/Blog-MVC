@@ -8,6 +8,8 @@
   <link href="Content/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->  
   <link href="Content/css/style.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="Content/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <title><?= $title ?></title>
 </head>
 <body>
@@ -55,7 +57,16 @@
     </div>
   </header>
 
-    <!-- Page Main Content -->  
+  <!-- Breadcrumb -->
+  <div class="container">
+    <div class="breadcrumb">
+      <div class="row">
+        <?php include_once 'View/Breadcrumb.php'; ?>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page Main Content -->  
   <div class="container">
         <?= $content ?>
   </div>

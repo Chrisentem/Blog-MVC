@@ -13,9 +13,10 @@
 						<textarea rows="3" class="admin-editor" id="content" name="content"/><?= $this->clean($post['content']) ?></textarea>
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-primary" >Sauvegarder</button>
+						<button type="submit" class="btn btn-primary">Sauvegarder</button>
 					</div>
 				</form>
+				<a class="btn btn-secondary" href="javascript:history.back()">Retour</a>
         	</div>
     		<div class="col-md-6">
     			<div class="row">

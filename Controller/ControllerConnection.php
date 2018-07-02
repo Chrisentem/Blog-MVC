@@ -49,7 +49,7 @@ class ControllerConnection extends Controller
     public function disconnect()
     {
         $this->request->getSession()->destroy();
-        $this->redirect("home");
+        $this->redirect("Home");
     }
 
 }

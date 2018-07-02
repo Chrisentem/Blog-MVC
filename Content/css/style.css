@@ -1,5 +1,5 @@
 header.masthead {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background: no-repeat center center;
   background-color: #868e96;
   background-attachment: scroll;
@@ -140,6 +140,15 @@ body {
 
 header.masthead .page-heading, header.masthead .site-heading a:hover {
   text-decoration: none;
+}
+
+
+.breadcrumb {
+  padding: none;
+}
+
+.breadcrumb-item {
+  list-style: none;
 }
 
 article a:hover {

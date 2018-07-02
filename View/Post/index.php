@@ -1,4 +1,4 @@
-<?php $this->title = "Mon Blog - " . $this->clean($post['title']); ?>
+<?php $this->title = $this->clean($post['title']); ?>
 
 <div class="row">
 	<div class="col-md-12">

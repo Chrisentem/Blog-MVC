@@ -1,12 +1,12 @@
 /** Admin CSS **/
 
-.main {
-	margin-top: 60px;
-}
-
 time {
 	color: #746d4b;
 	font-size: 1em;
+}
+
+.breadcrumb {
+	margin-top: 60px;
 }
 
 .admin-editpost {
