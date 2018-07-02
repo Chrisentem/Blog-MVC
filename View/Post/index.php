@@ -32,7 +32,7 @@
 	</div>
 	<div class="comment col-md-6">
 		<header>
-			<?= !empty($comments) ?  '<h3>Derniers commentaires à ' . $this->clean($post['title']) . '</h3>' : ''; ?>
+			<?php !empty($comments) ?  '<h3>Derniers commentaires à ' . $this->clean($post['title']) . '</h3>' : ''; ?>
 		</header>
 
 		<?php foreach ($comments as $comment): ?>

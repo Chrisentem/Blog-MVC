@@ -182,7 +182,6 @@ time {
     color: #bfbfbf;
 }
 
-
 #blogFooter .btn {
   margin-right: 5px;
 }
@@ -204,7 +203,6 @@ time {
 
 .container {
   align-content: space-between;
-  min-height: 90%;
 }
 
 /** Admin **/

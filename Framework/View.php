@@ -16,6 +16,9 @@ class View {
     /** View title (defined in the view file) */
     private $title;
 
+    const DEFAULT_TEMPLATE = 'View/TemplateDefault.php';
+    const ADMIN_TEMPLATE = 'View/TemplateAdmin.php';
+
     /**
      * Builder
      * 
@@ -37,7 +40,9 @@ class View {
      * 
      * @param array $data Data required to generate the view
      */
-    public function generate($viewData) {
+    public function generate($viewData, $isAdmin = false) {
+
+        $template = $isAdmin ? self::ADMIN_TEMPLATE : self::DEFAULT_TEMPLATE;
         // Generation of the specific part of the view
         $content = $this->generateFile($this->file, $viewData);
         // We define a local variable accessible by the view for the webroot
@@ -45,7 +50,7 @@ class View {
         // it is needed for URLs with type controleur/action/id
         $webRoot = Configuration::get("webRoot", "/");
         // Generation of a common template using the specifique part
-        $view = $this->generateFile('View/Template.php',
+        $view = $this->generateFile($template,
                 array('title' => $this->title, 'content' => $content,
                     'webRoot' => $webRoot));
         // Retruns the generated view to the web browser

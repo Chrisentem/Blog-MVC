@@ -24,5 +24,23 @@ abstract class ControllerSecured extends Controller
         }
     }
 
+    // Override of Controller method
+    protected function generateView($viewData = array(), $action = null) {
+        // Use of the current action as default action
+        $actionView = $this->action;
+        if ($action != null) {
+            // Use of the given action in method params
+            $actionView = $action;
+        }    
+        // Use of the current controller name
+        $controllerClass = get_class($this);
+        $controllerView = str_replace("Controller", "", $controllerClass);
+
+        // Instanciate a new object View
+        $vue = new View($actionView, $controllerView);
+        // Generate the view with $isAdmin is true
+        $vue->generate($viewData, true);
+    }
+
 }
 
