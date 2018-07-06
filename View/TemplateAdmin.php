@@ -46,12 +46,8 @@
         </nav>
 
   <!-- Breadcrumb -->
-  <div class="container">
-    <div class="breadcrumb">
-      <div class="row">
-        <?php include_once 'View/Breadcrumb.php';?>
-      </div>
-    </div>
+  <div class="container">    
+    <?php include_once 'View/Breadcrumb.php'; ?>
   </div>
 
   <!-- Page Main Content -->  

@@ -49,10 +49,19 @@ class View {
         // It is the path to the website on the server
         // it is needed for URLs with type controleur/action/id
         $webRoot = Configuration::get("webRoot", "/");
-        // Generation of a common template using the specifique part
-        $view = $this->generateFile($template,
-                array('title' => $this->title, 'content' => $content,
-                    'webRoot' => $webRoot));
+        // A default empty array value for breadcrumb is defined
+        // So we don't have to write values on every view
+        if(!isset($this->breadcrumb)){
+            $this->breadcrumb = [];
+        }
+        // Generation of a common template using the specific part
+        $view = $this->generateFile(
+            $template,
+            array('title' => $this->title,
+                'breadcrumb'=> $this->breadcrumb,
+                'content' => $content,
+                'webRoot' => $webRoot)
+            );
         // Retruns the generated view to the web browser
         echo $view;
     }

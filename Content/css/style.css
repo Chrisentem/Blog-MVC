@@ -142,14 +142,35 @@ header.masthead .page-heading, header.masthead .site-heading a:hover {
   text-decoration: none;
 }
 
+/** Breadcrumb **/
 
 .breadcrumb {
-  padding: none;
+  padding: 0rem;
+  margin-bottom: 1rem;
+  background-color: #beac7a;
+  font-size: 0.8rem;
+}
+
+.breadcrumb ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb-item a {
+  color: #000;
 }
 
 .breadcrumb-item {
   list-style: none;
+  display: inline-block;
 }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: url(../../Content/fonts/font-awesome/fonts/caret-right-solid.svg);
+  width: 0.8em;
+}
+
+/** Posts **/
 
 article a:hover {
   text-decoration: none;

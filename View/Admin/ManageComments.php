@@ -1,4 +1,11 @@
-<?php $this->title = "Administration - Commentaires" ?>
+<?php $this->title = "Commentaires" ?>
+
+<!-- Breadcrumb -->
+<?php $this->breadcrumb = [
+	['url' => 'admin/', 'title' => 'Accueil'],
+	['title' => $this->title]
+];
+?>
 
 <header>
 <h1>Administration du Blog</h1>

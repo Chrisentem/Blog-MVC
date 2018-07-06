@@ -1,5 +1,12 @@
 <?php $this->title = "Administration - Billet" ?>
 
+<!-- Breadcrumb -->
+<?php $this->breadcrumb = [
+	['url' => 'admin/', 'title' => 'Accueil'],
+	['title' => 'Édition - ' . $this->clean($post['title'])]
+];
+?>
+
 <h1>Administration - Modifier un billet</h1>
     	<div class="row">
     		<div class="col-md-6">
