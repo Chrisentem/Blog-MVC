@@ -103,6 +103,7 @@ class View {
     }
 
     private function truncate($text, $limit = 50, $ellipsis = '...') {
+        $text = strip_tags($text);
         $words = preg_split("/[\n\r\t ]+/", $text, $limit + 1, PREG_SPLIT_NO_EMPTY);
         if (count($words) > $limit ) {
             array_pop($words);
