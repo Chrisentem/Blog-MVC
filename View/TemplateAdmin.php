@@ -10,7 +10,7 @@
   <link href="Content/css/style.css" rel="stylesheet">
   <link href="Content/css/admin.css" rel="stylesheet">
   <!-- TinyMCE Editor loading -->
-  <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script src="Content/tinymce/js/tinymce/tinymce.min.js"></script>
   <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
   <title><?= $title ?></title>
 </head>
