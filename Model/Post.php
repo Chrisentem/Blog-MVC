@@ -17,7 +17,7 @@ class Post extends Model {
      * @return PDOStatement List of Posts
      */
 	public function getPosts(int $max = 5) {
-        $sql = 'SELECT POST_ID as id, DATE_FORMAT(POST_DATE, "%d/%m/%Y à %Hh%imin") as date, POST_TITLE as title, POST_CONTENT as content FROM T_POST ORDER BY POST_ID DESC LIMIT ' . $max;
+        $sql = 'SELECT POST_ID as id, DATE_FORMAT(POST_DATE, "%d/%m/%Y à %Hh%imin") as date, DATE_FORMAT(POST_DATE_MODIFIED, "%d/%m/%Y à %Hh%imin") as modificationDate, POST_TITLE as title, POST_CONTENT as content FROM T_POST ORDER BY POST_ID DESC LIMIT ' . $max;
         $posts = $this->executeRequest($sql);
 		return $posts; // Returns an array with the data
 	}
@@ -29,7 +29,7 @@ class Post extends Model {
      * @throws Exception If Post id unknown
      */
 	public function getPost($postId){
-		$sql = 'SELECT POST_ID as id, DATE_FORMAT(POST_DATE, "%d/%m/%Y à %Hh%imin") as date, POST_TITLE as title, POST_CONTENT as content FROM T_POST WHERE POST_ID=?';
+		$sql = 'SELECT POST_ID as id, DATE_FORMAT(POST_DATE, "%d/%m/%Y à %Hh%imin") as date, DATE_FORMAT(POST_DATE_MODIFIED, "%d/%m/%Y à %Hh%imin") as modificationDate, POST_TITLE as title, POST_CONTENT as content FROM T_POST WHERE POST_ID=?';
 		$post = $this->executeRequest($sql, array($postId));
 		if ($post->rowCount() > 0)
 		return $post->fetch();  // On récupère la première ligne de résultat
@@ -44,7 +44,7 @@ class Post extends Model {
     * @param string $title Post title
     **/    
     public function update($title, $content, $postId){
-        $sql = 'UPDATE T_POST SET POST_TITLE = ?, POST_CONTENT = ?, POST_DATE = ? WHERE POST_ID = ?';
+        $sql = 'UPDATE T_POST SET POST_TITLE = ?, POST_CONTENT = ?, POST_DATE_MODIFIED = ? WHERE POST_ID = ?';
         $date = date(DATE_W3C);
         $this->executeRequest($sql, [$title, $content, $date, $postId]);
     }

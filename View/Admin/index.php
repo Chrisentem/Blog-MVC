@@ -37,6 +37,7 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
                   <tr>
                     <th scope="col">Titre</th>
                     <th scope="col">Date de création</th>
+                    <th scope="col">Modifié le</th>
                     <th scope="col">Éditer</th>
                     <th scope="col">Supprimer</th>
                   </tr>
@@ -46,6 +47,7 @@ Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($n
                     <tr>
                       <td><?= $this->clean($post['title']) ?></td>
                       <td><time><?= $this->clean($post['date']) ?></time></td>
+                      <td><time><?= !is_null($post['modificationDate']) ? $this->clean($post['modificationDate']) : '--' ?></time></td>
                       <td><a class="btn btn-primary btn-sm" href="<?= "admin/editPost/" . $this->clean($post['id']) ?>">Editer</a></td>
                       <td><a class="btn btn-danger btn-sm" href="<?= "admin/deletePost/" . $this->clean($post['id']) ?>">Supprimer</a></td>
                     </tr>

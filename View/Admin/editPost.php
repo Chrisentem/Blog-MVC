@@ -33,7 +33,7 @@
     				<div class="admin-editpost col-12">
 				        <h3><?= $this->clean($post['title']) ?></h3>
 				        <time>Crée le : <?= $this->clean($post['date']) ?></time>
-				        <!-- <p><?= $this->clean($post['content']) ?></p> -->
+				        <time><?= !is_null($post['modificationDate']) ? ' - Modifié le : ' . $this->clean($post['modificationDate']) : '' ?></time><hr>
 				        <p><?= $post['content'] ?></p>
 				    </div>
 		    	</div>
