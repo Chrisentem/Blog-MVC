@@ -39,7 +39,11 @@
 	</div>
 	<div class="comment col-md-6">
 		<header>
-			<?php !empty($comments) ?  '<h3>Derniers commentaires à ' . $this->clean($post['title']) . '</h3>' : ''; ?>
+			<h3>Derniers commentaires à <?= $this->clean($post['title']) ?></h3>
+			<?php if(empty($comments)) {
+					echo '<p>Il n\'y a pas encore de commentaire, laissez-en un :)</p>';
+				}
+			?>
 		</header>
 
 		<?php foreach ($comments as $comment): ?>
