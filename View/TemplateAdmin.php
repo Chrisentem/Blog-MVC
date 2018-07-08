@@ -33,6 +33,9 @@
                   <a class="nav-link" href="admin/manageComments">Commentaires</a>
                 </li>
                 <li class="nav-item">
+                  <a class="nav-link" href="admin/managePages">Pages</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="<?= $webRoot ?>" target="_blank">Aperçu du site</a>
                 </li>
                 <li class="nav-item">

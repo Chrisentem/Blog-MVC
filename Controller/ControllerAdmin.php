@@ -3,6 +3,7 @@
 require_once 'ControllerSecured.php';
 require_once 'Model/Post.php';
 require_once 'Model/Comment.php';
+require_once 'Model/Page.php';
 
 /**
  * Controller for administration
@@ -14,14 +15,17 @@ class ControllerAdmin extends ControllerSecured
 {
     private $post;
     private $comment;
+    private $page;
 
     /**
      * Builder
      */
     public function __construct()
     {
+    public function __construct() {
         $this->post = new Post();
         $this->comment = new Comment();
+        $this->page = new Page();
     }
 
     // Action to load Admin homepage
@@ -88,6 +92,31 @@ class ControllerAdmin extends ControllerSecured
         $comId = $this->request->getParameter("id");
         $this->comment->deleteReports($comId);
         $this->redirect('Admin','manageComments');
+    }
+
+    // Action to display simple pages list
+    public function managePages() {
+        $pages = $this->page->getPages();
+        $this->generateView(array('pages' => $pages));
+    }
+
+        // Action to edit a Page
+    // Change title and partial content only allowed
+    public function editPage() {
+        $pageId = $this->request->getParameter("id");
+        $page = $this->page->getPage($pageId);
+        $this->generateView(array('page' => $page));
+    }
+
+    // Action to save a Page modifications  
+    public function savePage() {
+        $postId = $this->request->getParameter("id");
+        $title = $this->request->getParameter("title");
+        $content = $this->request->getParameter("content");
+        
+        $this->page->update($title, $content, $pageId);
+        $this->redirect('admin','editPost/'.$pageId);
+
     }
 
 }

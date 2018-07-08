@@ -25,18 +25,16 @@
           <li class="nav-item">
             <a class="nav-link" href="">Accueil</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home/aPropos">Biographie</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="home/contact">Contact</a>
+          </li>          
           <?php if(isset($_SESSION['login'])) {
               echo '<li class="nav-item"><a class="nav-link" href="admin/">Tableau de bord</a></li>';
               echo '<li class="nav-item"><a class="nav-link" href="connection/disconnect">Se déconnecter</a></li>';
           } ?>
-<!--  Extra links possible          
-                <li class="nav-item">
-                  <a class="nav-link" href="">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="">Contact</a>
-                </li>
-              -->
         </ul>
       </div>
     </div>
