@@ -1,10 +1,12 @@
 <?php $this->title = "Administration - Accueil" ?>
 
+
 <header>
 <h1>Administration du Blog</h1>
-<p>Bienvenue, <?= $this->clean($login) ?> !
+<p>Bienvenue sur le tableau de bord, <?= $this->clean($login) ?> !
 Ce blog comporte <?= $this->clean($numPosts) ?> billet(s) et <?= $this->clean($numComments) ?> commentaire(s).</p>
 </header>
+<hr>
 <div class="container">
     <div class="row">
         <div class="col-md-12">

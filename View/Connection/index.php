@@ -1,4 +1,4 @@
-<?php $this->title = "Mon Blog - Connexion" ?>
+<?php $this->title = "Connexion" ?>
 
 <div class="container">
 	<div class="row text-center">

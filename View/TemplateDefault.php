@@ -16,7 +16,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand" href="">Jean Forteroche - Blog</a>
+      <img src="Content/img/chris_Jean-Forteroche.png" alt="Jean Forteroche" style="max-height: 50px; margin-right: 10px"><a class="navbar-brand" href="">Jean Forteroche - Blog</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       Menu<i class="fa fa-bars"></i>
       </button>

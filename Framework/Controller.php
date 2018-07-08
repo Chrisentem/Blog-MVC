@@ -88,5 +88,5 @@ abstract class Controller {
         // Redirection to URL /website_root/controller/action
         header("Location:" . $webRoot . $controller . "/" . $action);
     }
-
+    
 }

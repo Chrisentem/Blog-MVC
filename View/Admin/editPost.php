@@ -30,7 +30,7 @@
     				<div class="col-12">
     					<span style="color: #bfbfbf; font-size: 1rem; font-weight: 400;">Aperçu du billet</span>
     				</div>
-    				<div class="admin-editpost col-12">
+    				<div class="admin-edit col-12">
 				        <h3><?= $this->clean($post['title']) ?></h3>
 				        <time>Crée le : <?= $this->clean($post['date']) ?></time>
 				        <time><?= !is_null($post['modificationDate']) ? ' - Modifié le : ' . $this->clean($post['modificationDate']) : '' ?></time><hr>
