@@ -58,7 +58,12 @@ class ControllerAdmin extends ControllerSecured
     public function savePost() {
         $postId = $this->request->getParameter("id");
         $title = $this->request->getParameter("title");
-        $content = $this->request->getParameter("content");
+        if($this->request->existsParameter("content")) {
+            $content = $this->request->getParameter("content");
+        }
+        else {
+            $content = '';
+        }
         
         $this->post->update($title, $content, $postId);
         $this->redirect('admin','editPost/'.$postId);
@@ -75,7 +80,12 @@ class ControllerAdmin extends ControllerSecured
     // Action to write a new Post
     public function writing() {
         $title = $this->request->getParameter("new_title");
-        $content = $this->request->getParameter("new_content");
+        if($this->request->existsParameter("new_content")) {
+            $content = $this->request->getParameter("new_content");
+        }
+        else {
+            $content = '';
+        }
         $this->post->create($title, $content);
         $this->redirect('Admin','index/');
     }
@@ -110,13 +120,16 @@ class ControllerAdmin extends ControllerSecured
 
     // Action to save a Page modifications  
     public function savePage() {
-        $postId = $this->request->getParameter("id");
         $pageId = $this->request->getParameter("id");
         $title = $this->request->getParameter("title");
-        $content = $this->request->getParameter("content");
-        
+        if($this->request->existsParameter("content")) {
+            $content = $this->request->getParameter("content");
+        }
+        else {
+            $content = '';
+        }
+                
         $this->page->update($title, $content, $pageId);
-        $this->redirect('admin','editPost/'.$pageId);
         $this->redirect('admin','editPage/'.$pageId);
 
     }

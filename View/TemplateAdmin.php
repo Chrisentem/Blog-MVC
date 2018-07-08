@@ -11,7 +11,7 @@
   <link href="Content/css/admin.css" rel="stylesheet">
   <!-- TinyMCE Editor loading -->
   <script src="Content/tinymce/js/tinymce/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea.admin-editor' });</script>
+  <script>tinymce.init({ selector:'textarea.admin-editor', min_height: 400, plugins: "code" });</script>
   <title><?= $title ?></title>
 </head>
 <body>
