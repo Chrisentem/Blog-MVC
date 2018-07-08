@@ -40,7 +40,7 @@ class Page extends Model {
     * @param string $title Page title
     **/    
     public function update($title, $content, $pageId){
-        $sql = 'UPDATE T_PAGES SET PAGE_TITLE = ?, PAGE_CONTENT = ?, POST_DATE_MODIFIED = ? WHERE PAGE_ID = ?';
+        $sql = 'UPDATE T_PAGES SET PAGE_TITLE = ?, PAGE_CONTENT = ?, PAGE_DATE_MODIFIED = ? WHERE PAGE_ID = ?';
         $date = date(DATE_W3C);
         $this->executeRequest($sql, [$title, $content, $date, $pageId]);
     }

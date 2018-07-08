@@ -111,11 +111,13 @@ class ControllerAdmin extends ControllerSecured
     // Action to save a Page modifications  
     public function savePage() {
         $postId = $this->request->getParameter("id");
+        $pageId = $this->request->getParameter("id");
         $title = $this->request->getParameter("title");
         $content = $this->request->getParameter("content");
         
         $this->page->update($title, $content, $pageId);
         $this->redirect('admin','editPost/'.$pageId);
+        $this->redirect('admin','editPage/'.$pageId);
 
     }
 
