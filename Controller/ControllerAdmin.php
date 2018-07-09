@@ -20,28 +20,37 @@ class ControllerAdmin extends ControllerSecured
     /**
      * Builder
      */
-    public function __construct()
-    {
     public function __construct() {
         $this->post = new Post();
         $this->comment = new Comment();
         $this->page = new Page();
     }
 
-    // Action to load Admin homepage
-    public function index()
-    {
+    // Default Action defined
+    public function index() {
+        // We define variable to use with pagination
+        $perPage = parent::PER_PAGE;
         $numPosts = $this->post->getNumPosts();
-        $posts = $this->post->getPosts($numPosts);
+        $maxPage = ceil($numPosts / $perPage);
+        $calledPageNumber = $this->buildCurrentPageNumber($maxPage);
+
+        // Get data from model objects
+        $posts = $this->post->getPaginatedPosts($perPage, $calledPageNumber);
         $numComments = $this->comment->getNumComments();
         $login = $this->request->getSession()->getAttribute("login");
 
-        $this->generateView(array('numPosts' => $numPosts, 'numComments' => $numComments, 'login' => $login, 'posts' => $posts));
+        $this->generateView(array(
+            'numPosts' => $numPosts,
+            'numComments' => $numComments,
+            'login' => $login,
+            'posts' => $posts,
+            'maxPage' => $maxPage,
+            'curPage' => $calledPageNumber
+        ));
     }
 
     // Action to load Comments management page
-    public function manageComments()
-    {
+    public function manageComments() {
         $allComments = $this->comment->getAllComments();
         $this->generateView(array('allComments' => $allComments));
     }

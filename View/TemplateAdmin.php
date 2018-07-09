@@ -58,6 +58,13 @@
         <?= $content ?>
   </div>
 
+  <!-- Pagination -->
+  <div class="container">
+    <div id="pagin" class="row">
+      <?= $pagination ?>
+    </div>
+  </div>
+
   <!-- Page Footer -->
   <footer id="blogFooter">
     <div class="container">

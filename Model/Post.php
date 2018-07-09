@@ -11,16 +11,15 @@ require_once 'Framework/Model.php';
 
 class Post extends Model {
 
-
     /** Returns the Posts List of the Blog with display LIMIT
      * 
      * @return PDOStatement List of Posts
      */
-	public function getPosts(int $max = 5) {
-        $sql = 'SELECT POST_ID as id, DATE_FORMAT(POST_DATE, "%d/%m/%Y à %Hh%imin") as date, DATE_FORMAT(POST_DATE_MODIFIED, "%d/%m/%Y à %Hh%imin") as modificationDate, POST_TITLE as title, POST_CONTENT as content FROM T_POST ORDER BY POST_ID DESC LIMIT ' . $max;
+    public function getPaginatedPosts(int $perPage, int $calledPageNumber) {
+        $sql = 'SELECT POST_ID as id, DATE_FORMAT(POST_DATE, "%d/%m/%Y à %Hh%imin") as date, DATE_FORMAT(POST_DATE_MODIFIED, "%d/%m/%Y à %Hh%imin") as modificationDate, POST_TITLE as title, POST_CONTENT as content FROM T_POST ORDER BY POST_ID DESC LIMIT ' . (($calledPageNumber - 1)*$perPage) . ', ' . $perPage;
         $posts = $this->executeRequest($sql);
-		return $posts; // Returns an array with the data
-	}
+        return $posts; // Returns an array with the data
+    }
 
     /** Returns infos of one Post
      * 

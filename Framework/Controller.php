@@ -20,6 +20,9 @@ abstract class Controller {
   /** Incoming request **/
   protected $request;
 
+  /** Usable for pagination with every child controller when needed **/
+  const PER_PAGE = 5;
+
   /** Defines the incoming request
    *
    * @param Request $request incoming request
@@ -88,5 +91,20 @@ abstract class Controller {
         // Redirection to URL /website_root/controller/action
         header("Location:" . $webRoot . $controller . "/" . $action);
     }
+
+  /**
+  * Returns the page number if exists or int(1) by default
+  *
+  * 
+  **/
+  public function buildCurrentPageNumber($maxPage) {
+    if($this->request->existsParameter("page")){
+      $cPage = $this->request->getParameter("page");
+    }
+    else {
+      $cPage = 1;
+    }
+    return min(max($cPage, 1), $maxPage);
+  }
     
 }

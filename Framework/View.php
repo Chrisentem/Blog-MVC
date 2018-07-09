@@ -45,6 +45,7 @@ class View {
         $template = $isAdmin ? self::ADMIN_TEMPLATE : self::DEFAULT_TEMPLATE;
         // Generation of the specific part of the view
         $content = $this->generateFile($this->file, $viewData);
+        $pagination = $this->generateFile('View/Pagination.php', $viewData);
         // We define a local variable accessible by the view for the webroot
         // It is the path to the website on the server
         // it is needed for URLs with type controleur/action/id
@@ -60,6 +61,7 @@ class View {
             array('title' => $this->title,
                 'breadcrumb'=> $this->breadcrumb,
                 'content' => $content,
+                'pagination' => $pagination,
                 'webRoot' => $webRoot)
             );
         // Retruns the generated view to the web browser
