@@ -42,18 +42,22 @@
   <!-- Page Header -->
   <header class="masthead" style="background-image: url('Content/img/home-bg.jpg')">
     <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <a href=""><h1 id="blogTitle">Billet simple pour l'Alaska</h1></a>
-              <span class="subheading">Découvrez mon dernier ouvrage</span>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <a href=""><h1 id="blogTitle">Billet simple pour l'Alaska</h1></a>
+            <hr>
+            <span class="subheading">Découvrez mon dernier roman</span>
+            <div id="presentation">
+              <p>Ce blog vous propose de découvrir épisode après épisode le contenu de mon dernier roman. vous pourrez y laisser vos impressions en écrivant des commentaires. Je vous souhaite une bonne et trépidante lecture...</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
   <!-- Breadcrumb -->
   <div class="container">    

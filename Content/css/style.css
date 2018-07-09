@@ -1,3 +1,5 @@
+/*** Stylesheet Blog ***/
+
 header.masthead {
   margin-bottom: 20px;
   background: no-repeat center center;
@@ -100,8 +102,6 @@ header.masthead .post-heading .meta a {
   }
 }
 
-/*** Stylesheet Mon Blog 2018 ***/
-
 html, body {
     height: 100%;
 }
@@ -140,6 +140,22 @@ body {
 
 header.masthead .page-heading, header.masthead .site-heading a:hover {
   text-decoration: none;
+}
+
+.subheading {
+  color: #beac7a;
+}
+
+#presentation {
+  display: block;
+  width: 100%;
+  padding: .375rem 0.375rem;
+  line-height: 1.5;
+  color: #beac7a;
+}
+
+#presentation p {
+  margin-bottom: 0px;
 }
 
 /** Breadcrumb **/
@@ -201,7 +217,7 @@ time {
 
 #blogTitle {
     text-align: center;
-    color: #c0bec1;
+    color: #fff;
 }
 
 #decoLink {
