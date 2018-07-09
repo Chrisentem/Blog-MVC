@@ -22,8 +22,18 @@ class ControllerHome extends Controller {
 
     // Display all the blog's posts
     public function index() {
-        $posts = $this->post->getPosts();
-        $this->generateView(array('posts' => $posts));
+        $perPage = parent::PER_PAGE;
+        $numPosts = $this->post->getNumPosts();
+        $maxPage = ceil($numPosts / $perPage);
+        $calledPageNumber = $this->buildCurrentPageNumber($maxPage);
+
+        $posts = $this->post->getPaginatedPosts($perPage, $calledPageNumber);
+        $this->generateView(array(
+        	'posts' => $posts,
+        	'numPosts' => $numPosts,
+            'maxPage' => $maxPage,
+            'curPage' => $calledPageNumber
+        ));
     }
 
     // Action to display Author Bio page
