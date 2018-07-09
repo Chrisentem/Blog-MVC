@@ -250,3 +250,20 @@ time {
 .container {
   align-content: space-between;
 }
+
+/** Pagination **/
+
+.current-page {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #746d4b;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+#pagin {
+  justify-content: space-around;
+}
