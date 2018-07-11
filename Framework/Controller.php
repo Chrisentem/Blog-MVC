@@ -92,9 +92,10 @@ abstract class Controller {
   /**
   * Returns the page number if exists or int(1) by default
   *
+  * @param int $maxPage
   * 
   **/
-  public function buildCurrentPageNumber($maxPage) {
+  public function buildCurrentPageNumber(int $maxPage) {
     if($this->request->existsParameter("page")){
       $cPage = $this->request->getParameter("page");
     }

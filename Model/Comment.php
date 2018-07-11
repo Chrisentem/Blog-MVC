@@ -62,24 +62,13 @@ class Comment extends Model {
     }
 
     /**
-     * Validate a reported comment and delete reports from DB 
+     * Validate a reported comment by deleting reports from DB 
      * 
      * @param int $comId
      */
     public function deleteReports($comId){
         $sql = 'DELETE FROM T_COMMENT_REPORT WHERE COM_ID = ?';
         $this->executeRequest($sql, [$comId]);
-    }
-
-        /** Update a Comment
-    *
-    * @param int $comId Comment id
-    * @param string $comContent Comment content
-    **/    
-    public function update($comContent, $comId){
-        $sql = 'UPDATE T_COMMENT SET COM_CONTENT = ?, COM_DATE_MODERATE = ? WHERE COM_ID = ?';
-        $date = date(DATE_W3C);
-        $this->executeRequest($sql, [$comContent, $date, $comId]);
     }
 
     /** Report bad comments

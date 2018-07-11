@@ -1,5 +1,3 @@
-<?php $url=strtok($_SERVER["REQUEST_URI"],'?'); ?>
-
 <nav aria-label="pagination">
 	<div class="pagination">
 		<?php
