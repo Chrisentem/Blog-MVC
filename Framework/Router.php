@@ -78,6 +78,9 @@ class Router {
 
   // Manage execution error (exception)
   private function manageError(Exception $exception) {
+    //if($exception instanceof NotFoundException) {
+        header("HTTP/1.0 404 Not Found");
+    //}
     $vue = new View('error');
     $vue->generate(array('msgError' => $exception->getMessage()));
   }
