@@ -3,6 +3,7 @@
 <!-- Breadcrumb -->
 <?php $this->breadcrumb = [
 	['url' => 'admin/', 'title' => 'Accueil'],
+	['url' => 'admin/managePages/', 'title' => 'Pages'],
 	['title' => 'Édition - ' . $this->clean($page['title'])]
 ];
 ?>
