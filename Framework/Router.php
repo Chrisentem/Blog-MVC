@@ -59,7 +59,7 @@ class Router {
       return $controller;
     }
     else
-      throw new Exception("File '$controllerFile' not found");
+      throw new Exception("File '$controllerFilePath' not found");
   }
 
   /**
