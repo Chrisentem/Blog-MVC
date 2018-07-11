@@ -17,6 +17,9 @@ class ControllerAdmin extends ControllerSecured
     private $comment;
     private $page;
 
+    /** Usable for pagination with every child controller when needed **/
+    const PER_PAGE = 5;
+
     /**
      * Builder
      */
@@ -29,7 +32,7 @@ class ControllerAdmin extends ControllerSecured
     // Default Action defined
     public function index() {
         // We define variable to use with pagination
-        $perPage = parent::PER_PAGE;
+        $perPage = self::PER_PAGE;
         $numPosts = $this->post->getNumPosts();
         $maxPage = ceil($numPosts / $perPage);
         $calledPageNumber = $this->buildCurrentPageNumber($maxPage);

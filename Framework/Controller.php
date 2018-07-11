@@ -20,9 +20,6 @@ abstract class Controller {
   /** Incoming request **/
   protected $request;
 
-  /** Usable for pagination with every child controller when needed **/
-  const PER_PAGE = 5;
-
   /** Defines the incoming request
    *
    * @param Request $request incoming request

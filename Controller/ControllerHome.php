@@ -14,6 +14,8 @@ class ControllerHome extends Controller {
 
     private $post;
     private $page;
+    /** Usable for pagination with every child controller when needed **/
+    const PER_PAGE = 5;
 
     public function __construct() {
         $this->post = new Post();
@@ -22,7 +24,7 @@ class ControllerHome extends Controller {
 
     // Display all the blog's posts
     public function index() {
-        $perPage = parent::PER_PAGE;
+        $perPage = self::PER_PAGE;
         $numPosts = $this->post->getNumPosts();
         $maxPage = ceil($numPosts / $perPage);
         $calledPageNumber = $this->buildCurrentPageNumber($maxPage);
