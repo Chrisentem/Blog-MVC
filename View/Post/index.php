@@ -36,7 +36,6 @@
 		    	<button type="submit" class="btn btn-primary" >Envoyer</button>
 			</div>
 		</form>
-		<a class="btn btn-secondary" href="javascript:history.back()">Retour</a>
 	</div>
 	<div class="comment col-md-6">
 		<header>
