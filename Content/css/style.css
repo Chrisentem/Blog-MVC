@@ -122,6 +122,10 @@ body {
   color: #4e7e8c;
 }
 
+.navbar-light .navbar-toggler {
+  color: #fff;
+}
+
 .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
   color: rgba(255, 255, 255, 1);
 }
